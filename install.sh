@@ -13,7 +13,6 @@ curl -sL https://deb.nodesource.com/setup_lts.x | bash - \
     && apt-get -y install -y nodejs
 # build flood
 cd /app \
-    && npm update \
     && git clone https://github.com/jfurrow/flood.git \
     && cd flood \
     && cp config.template.js config.js \
@@ -21,10 +20,12 @@ cd /app \
     && npm install -g node-gyp \
     && npm run build
 
+# npm update seems to be optional
+#npm update
 
 # clean up
-apt
-#apt-get -y autoremove \
-#    && apt-get -y autoclean \
-#    && apt-get -y clean \
-#    && rm -fr /tmp/* /var/tmp/* /var/lib/apt/lists/*
+apt-get -y remove build-essential git \
+    && apt-get -y autoremove \
+    && apt-get -y autoclean \
+    && apt-get -y clean \
+    && rm -fr /tmp/* /var/tmp/* /var/lib/apt/lists/*
