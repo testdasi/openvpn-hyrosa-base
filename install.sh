@@ -26,6 +26,7 @@ cd /app \
 # clean up
 apt-get -y remove build-essential git \
     && apt-get -y autoremove \
+    && apt-get -y install procps \
     && apt-get -y autoclean \
     && apt-get -y clean \
     && rm -fr /tmp/* /var/tmp/* /var/lib/apt/lists/*
