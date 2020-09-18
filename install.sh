@@ -1,6 +1,6 @@
 #!/bin/bash
 
-### openvpn, nftables, stubby, tinyproxy, dante, sabnzbdplus, nzbhydra2, curl are in the base image ###
+### openvpn, nftables, stubby, tinyproxy, dante, sabnzbdplus, nzbhydra2, curl, launcher are in the base image ###
 
 # install rtorrent with screen (to send it to background)
 apt-get -y update \
@@ -19,9 +19,6 @@ cd /app \
     && npm install \
     && npm install -g node-gyp \
     && npm run build
-
-# npm update seems to be optional
-#npm update
 
 # clean up
 apt-get -y remove build-essential git \
