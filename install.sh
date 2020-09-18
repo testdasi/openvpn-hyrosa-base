@@ -4,7 +4,7 @@
 
 # install rtorrent with screen (to send it to background)
 apt-get -y update \
-    && apt-get -y install rtorrent screen
+    && apt-get -y install rtorrent
     
 # install additional packages to build flood
 apt-get -y install build-essential git
