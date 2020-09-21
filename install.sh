@@ -2,9 +2,9 @@
 
 ### openvpn, nftables, stubby, tinyproxy, dante, sabnzbdplus, nzbhydra2, curl, launcher are in the base image ###
 
-# install rtorrent with screen (to send it to background)
+# install rtorrent with screen (required to send it to background)
 apt-get -y update \
-    && apt-get -y install rtorrent
+    && apt-get -y install rtorrent screen
     
 # install additional packages to build flood
 apt-get -y install build-essential git
